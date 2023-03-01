@@ -1,0 +1,27 @@
+#include<stdio.h>
+int checkf(int , int);
+int main()
+{   int check1;
+    int num,check;
+    printf("Enter the number ");
+    scanf("%d",&num);
+    printf("Enter the digit you want to search ");
+    scanf("%d",&check);
+    check1=checkf(num,check);
+    if(check1)
+        printf("%d is present in the given %d number",check,num);
+    else
+        printf("%d is not present in the given %d number",check,num);
+}
+
+int checkf(int num,int check)
+{
+    while(num)
+    {
+        int rem=num%10;
+        if(rem==check)
+            return 1;
+        num/=10;
+    }
+    return 0;
+}
