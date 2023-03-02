@@ -1,0 +1,36 @@
+#include<stdio.h>
+void primefact(int );
+int main()
+{
+    int n;
+    printf("Enter the number ");
+    scanf("%d",&n);
+    primefact(n);
+}
+
+void primefact(int n)
+{
+    int isPrime;
+    while(n)
+     for(int i=2; i<=n; i++)
+    {
+        if(n%i==0)
+        {
+            isPrime = 1;
+            for(int j=2; j<=i/2; j++)
+            {
+                if(i%j==0)
+                {
+                    isPrime = 0;
+                    break;
+                }
+            }
+            if(isPrime==1)
+            {
+                printf("%d ", i);
+                n=n/i;
+            }
+        }
+    }
+
+}
